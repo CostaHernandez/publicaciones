@@ -1,0 +1,493 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  height: 100vh;
+}
+#LeftNav {
+  width: 200px;
+  height: 100vh;
+  overflow: auto;
+  color: white;
+  background-color: #141518;
+  font-family: Nunito;
+  position: relative;
+  transition-duration: 0.3s;
+  z-index: 100;
+  font-size: 1.2rem;
+  padding-top: 50px;
+}
+
+#MainBody {
+  width: calc(100% - 150px);
+  transition: 0.3s;
+  height: 100vh;
+  overflow: auto;
+  background-color: #1d1d24;
+}
+#LeftNav > li {
+  list-style-type: none;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+#LeftNav > li > .ProIco {
+  position: relative;
+  height: 10px;
+  width: 20px;
+  top: -5px;
+  margin: 5px;
+}
+#LeftNav > li:not(#logo):not(.CreateOptionsHeading):hover,
+#CreateOptions > li:hover {
+  background-color: #08090a;
+}
+#CreateOptions {
+  width: calc(100% - 40px);
+  height: auto;
+  margin: 5px 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #282a30;
+  overflow: hidden;
+  position: relative;
+}
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  position: absolute;
+  z-index: 110;
+  width: 200px;
+  transition: 0.3s;
+  height: 50px;
+}
+.CreateOptionsHeading {
+  color: #8b90a6;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+#CreateOptions > hr {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  height: 2px;
+
+  border: none;
+  background: linear-gradient(to Left, skyblue, green, orange, purple, green);
+}
+#CreateOptions > li {
+  list-style-type: none;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+#CreateOptions > li > svg:not(.downArrow) {
+  margin: 5px;
+}
+.downArrow {
+  margin-left: auto;
+}
+#TopNav {
+  display: flex;
+  height: 70px;
+  padding: 10px;
+}
+#SearchInput {
+  flex: 1;
+  padding: 10px;
+  font-size: 1.25rem;
+  border: none;
+  background-color: #434650;
+  border-radius: 5px;
+  transition-duration: 0.3s;
+  color: white;
+  position: relative;
+}
+#SearchInput:focus {
+  background-color: #8b90a6;
+  border: none;
+  outline: none;
+}
+#SearchInput::placeholder {
+  color: white;
+}
+#TopNav > button {
+  padding: 5px 15px;
+  margin: 0px 5px;
+  display: grid;
+  border: none;
+  cursor: pointer;
+  place-items: center;
+  border: none;
+  background-color: #282a30;
+  border-radius: 5px;
+}
+#PenFilter {
+  width: calc(100% - 20px);
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  color: #505061;
+  font-size: 1.3em;
+  font-weight: 900;
+  position: relative;
+  font-family: Nunito;
+  /*     
+    border-bottom:5px solid #505061; */
+}
+#PenFilter::after {
+  width: 100%;
+  content: "";
+  position: absolute;
+  height: 5px;
+  bottom: 0px;
+  border-radius: 5px;
+  background-color: #505061;
+}
+#PenFilter > li {
+  list-style: none;
+  padding: 20px;
+  position: relative;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+/* We would Make it better */
+#PenFilter > hr {
+  width: 0px;
+  z-index: 10;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+  content: "";
+  position: absolute;
+  border: none;
+  height: 5px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 5px;
+  background-color: #1daf00;
+}
+#PenFilter > li:hover {
+  color: white;
+}
+#PenContianer {
+  width: 100%;
+  height: 600px;
+  box-sizing: border-box;
+  display: grid;
+
+  grid-template-rows: calc(50% - 40px) calc(50% - 40px);
+  grid-template-columns: repeat(8, 40%);
+  overflow: hidden;
+  padding: 20px;
+  place-items: center;
+  gap: 50px;
+}
+.Pen {
+  flex-shrink: 0;
+  border-radius: 10px;
+  margin: 10px;
+  transition-duration: 0.3s;
+  width: 313.2px;
+  padding: 10px;
+  top: 10px;
+  display: flex;
+  transition-duration: 0.3s;
+  flex-direction: column;
+  height: calc(100% - 10px);
+  position: relative;
+  background-color: #3a3a43;
+  padding-bottom: 0px;
+}
+.PenImage {
+  width: 100%;
+
+  transition-duration: 0.3s;
+  margin-bottom: 10px;
+  height: 100%;
+  background-color: #48485c;
+  position: relative;
+  top: -25px;
+  border-radius: 10px;
+}
+.PenDetails {
+  display: grid;
+  grid-template-columns: 50px calc(100% - 20px);
+  grid-template-rows: 20px 30px;
+  align-items: center;
+}
+
+.authorImage {
+  margin: auto;
+  background-color: #18181e;
+  width: 40px;
+  height: 40px;
+  grid-area: auto/auto 1/2;
+  left: -20px;
+  top: 0px;
+  border-radius: 50%;
+  position: relative;
+  display: grid;
+  transition-duration: 0.3s;
+  place-items: center;
+}
+.PenTitle {
+  width: calc(100% - 20px);
+  color: white;
+  text-overflow: ellipsis;
+  font-family: Nunito;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.authorName {
+  grid-area: 2/2;
+  font-family: Nunito;
+  font-weight: 800;
+  color: rgb(133, 134, 153);
+  height: fit-content;
+  width: fit-content;
+}
+.PenPublicity {
+  display: flex;
+  list-style-type: none;
+  font-family: Nunito;
+  font-size: 0.6rem;
+  color: white;
+  position: absolute;
+  width: 100%;
+  margin-top: 5px;
+  bottom: -30px;
+  display: none;
+  transition-duration: 03s;
+  font-weight: 800;
+}
+.PenPublicity > li {
+  background-color: #1d1d24;
+  border-radius: 5px;
+  padding: 5px;
+  display: grid;
+  margin: 5px;
+  height: fit-content;
+  place-items: center;
+  grid-template-columns: auto auto;
+}
+.PenPublicity > li > svg {
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+}
+
+.Pen:hover {
+  height: calc(100% + 20px);
+}
+.Pen:hover .authorImage {
+  left: 0px;
+}
+.Pen:hover .PenImage {
+  top: 0px;
+}
+.Pen:hover .PenPublicity {
+  bottom: 10px;
+  display: flex;
+  position: relative;
+  animation: PublicityHoverEffect 0.3s linear;
+}
+@keyframes PublicityHoverEffect {
+  0% {
+    bottom: -20px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 10px;
+    opacity: 1;
+  }
+}
+#ToggleSideMenu {
+  width: 50px;
+  height: 100%;
+  background-color: #3a3a47;
+  margin-right: 10px;
+
+  border-radius: 10px;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 100% 100%;
+  gap: 10px;
+  overflow: hidden;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+#ToggleSideMenu > svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+  left: 0px;
+  position: relative;
+  transition-duration: 0.5s;
+}
+#BtnGoTop {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #01b6b6;
+  position: fixed;
+  bottom: 20px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  right: 40px;
+  display: grid;
+  place-items: center;
+}
+@media (max-width: 962px) {
+  #PenContianer {
+    grid-template-columns: repeat(8, 50%);
+  }
+}
+
+@media (max-width: 816px) {
+  #PenContianer {
+    grid-template-columns: repeat(8, 70%);
+  }
+}
+@media (max-width: 440px) {
+  html {
+    font-size: 80%;
+  }
+}
+@media (min-width: 800px) {
+  #ToggleSideMenu svg {
+    left: 0px;
+  }
+  #LeftNav {
+    width: 240px;
+  }
+  #MainBody {
+    width: calc(100% - 200px);
+  }
+  #logo {
+    left: 0px;
+    padding: 0px;
+  }
+}
+@media (max-width: 800px) {
+  #MainBody {
+    width: 100% !important;
+  }
+  #ToggleSideMenu {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+  }
+  #ToggleSideMenu svg {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    left: -35px;
+    height: 100%;
+  }
+  #LeftNav {
+    width: 0px;
+    z-index: 99;
+    position: absolute;
+  }
+  #MainBody {
+    width: 100%;
+  }
+  #TopNav {
+    padding-left: 50px;
+    font-size: 0.8rem;
+    height: 55px;
+
+    position: sticky;
+    background-color: #1d1d24;
+    z-index: 100;
+    top: 0px;
+  }
+  #TopNav > input {
+    height: 35px;
+    font-size: 1.1rem;
+  }
+  #TopNav svg {
+    width: 13px;
+  }
+  #TopNav > button {
+    height: 100%;
+    width: auto;
+    padding: 10px 10px;
+  }
+  #logo {
+    width: auto;
+    padding: 10px;
+    position: absolute;
+    left: 0px !important;
+    height: 35px;
+  }
+  #PenFilter {
+    margin: 0px;
+    width: 100%;
+  }
+  #PenFilter::after {
+    width: 100%;
+    margin: 0px;
+    border-radius: 0px;
+  }
+  #PenContianer {
+    grid-template-columns: repeat(8, 45%);
+  }
+  #BtnGoTop {
+    display: none;
+  }
+}
+@media (max-width: 670px) {
+  #PenContianer {
+    grid-template-columns: repeat(8, 50%);
+  }
+}
+@media (max-width: 590px) {
+  #PenContianer {
+    grid-template-columns: repeat(8, 60%);
+  }
+}
+@media (max-width: 498px) {
+  #PenContianer {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    justify-content: center;
+  }
+  .Pen {
+    height: 250px;
+    margin: 20px auto;
+    position: relative;
+    width: 100%;
+  }
+  .Pen:hover {
+    height: 250px;
+  }
+  .authorImage {
+    left: 0px;
+  }
+  .PenImage {
+    top: 0px;
+  }
+  .PenPublicity {
+    bottom: 10px;
+    display: flex;
+    position: relative;
+    animation: PublicityHoverEffect 0.3s linear;
+  }
+}
